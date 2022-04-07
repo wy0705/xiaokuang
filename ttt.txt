@@ -1,0 +1,132 @@
+//3.1   3.2
+
+import re
+
+
+def sentence_filter(keywords, text):
+    return re.sub("|".join(keywords), "***", text)
+
+def print_hi(speak):
+    dirty=['苍井空','暴力男','fuck']
+    print("方法一：")
+    print(sentence_filter(dirty, speak))
+    for i in dirty:
+        speak = speak.replace(i, '***')
+    print("方法二")
+    print(speak)
+
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    #s = input()
+    #print_hi(s)
+    products = [["iphone", 6888], ["MacPro", 14800], ["小米6", 2499], ["Coffee", 31], ["Book", 60],
+                ["Nike", 699]]
+
+    for i in range(len(products)):  # 控制行，0~2
+        print(i, end="\t\t")
+        for j in range(len(products[i])):  # 控制列
+            print(products[i][j], end='\t\t')
+        print()
+
+    #目标标记
+    temps=[-1,-1,-1,-1,-1,-1]
+    t=0
+    print("输入自己想要购买的商品：")
+    while t<6:
+        a=input()
+        if(a=="q"):
+            break
+        temps[t]=a
+        t=t+1
+    print("您想购买的商品为：")
+    for m in range(len(temps)):
+        for l in range(len(products)):
+            if (int(temps[m]) == l):
+                for f in range(len(products[l])):
+                    print(l, end="\t\t")
+                    print(products[l][f], end='\t\t')
+                print()
+
+# 4
+
+import re
+
+import random
+
+
+def sentence_filter(keywords, text):
+    return re.sub("|".join(keywords), "***", text)
+
+def print_hi(speak):
+    dirty=['苍井空','暴力男','fuck']
+    print("方法一：")
+    print(sentence_filter(dirty, speak))
+    for i in dirty:
+        speak = speak.replace(i, '***')
+    print("方法二")
+    print(speak)
+
+
+def print_():
+    print("------------------------------")
+
+def print_in(speak):
+    print(speak)
+
+def sum(a,b,c):
+    print(int(a)+int(b)+int(c))
+
+def ave(a,b,c):
+    print((int(a)+int(b)+int(c))/3)
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_()
+
+    speak="abcdefg"
+    print_in(speak)
+
+    a=1
+    b=2
+    c=3
+    sum(a,b,c)
+    ave(a,b,c)
+
+    user=["小明","16岁","男生"]
+    n=0
+    while n<4:
+        temp = random.randint(1000, 9999)
+        print("验证码为：")
+        print(temp)
+        print("输入一个四位验证码：")
+        s = input()
+        if (int(s) == temp):
+            print("验证成功！")
+            print("用户信息为：")
+            print(user)
+            break
+        else:
+            print("验证码输入错误！")
+            n=n+1
+        if int(n)==3:
+            print("多次为成功，退出系统！")
+            break
+
+
+
+#5
+def copy_():
+    ff = open("copy.txt", "a+")
+    shutil.copyfile("gushi.txt", "copy.txt")
+    ff.close()
+    print("复制完毕")
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    txtName = "gushi.txt"
+    new_context="相思\n王维\n红豆生南国\n春来发几枝\n愿君多采撷\n此物最相思\n"
+    f = open(txtName, "a+")
+    f.write(new_context)
+    f.close()
+
+    copy_()
